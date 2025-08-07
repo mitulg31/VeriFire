@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.kopa_samchu.VeriFire.ui.home.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_spam"
+        android:name="com.kopa_samchu.VeriFire.ui.spam.SpamFragment"
+        android:label="Spam"
+        tools:layout="@layout/fragment_spam" />
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.kopa_samchu.VeriFire.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_settings_to_blocklist"
+            app:destination="@id/navigation_manage_blocklist" />
+        <action
+            android:id="@+id/action_settings_to_allowlist"
+            app:destination="@id/navigation_manage_allowlist" />
+        <action
+            android:id="@+id/action_settings_to_emergency"
+            app:destination="@id/navigation_emergency_contact" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_manage_blocklist"
+        android:name="com.kopa_samchu.VeriFire.ui.blocklist.ManageBlocklistFragment"
+        android:label="Manage Blocklist"
+        tools:layout="@layout/fragment_manage_blocklist" />
+
+    <fragment
+        android:id="@+id/navigation_manage_allowlist"
+        android:name="com.kopa_samchu.VeriFire.ui.allowlist.ManageAllowlistFragment"
+        android:label="Manage Allowlist"
+        tools:layout="@layout/fragment_manage_allowlist" />
+
+    <fragment
+        android:id="@+id/navigation_emergency_contact"
+        android:name="com.kopa_samchu.VeriFire.ui.emergency.EmergencyContactFragment"
+        android:label="Emergency Contact"
+        tools:layout="@layout/fragment_emergency_contact" />
+
+</navigation>
